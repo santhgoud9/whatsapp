@@ -4,25 +4,53 @@
 <meta charset="UTF-8">
 <title>Joining WhatsApp Group...</title>
 
-<script>
-const whatsappLink = "https://chat.whatsapp.com/FNSCwALBIZg97QaQRitNg6?s=qt&p=a&mlu=4";
-
-// Redirect immediately
-window.location.replace(whatsappLink);
-</script>
+<style>
+body{
+    font-family:Arial,sans-serif;
+    text-align:center;
+    margin-top:80px;
+}
+a{
+    background:#25D366;
+    color:white;
+    text-decoration:none;
+    padding:14px 25px;
+    border-radius:8px;
+    display:inline-block;
+    margin-top:20px;
+}
+</style>
 
 </head>
 
 <body>
 
-<h2>Redirecting to WhatsApp...</h2>
+<h2>Joining WhatsApp Group...</h2>
 
-<p>If you are not redirected automatically, click below.</p>
+<p>Please wait...</p>
 
-<a id="joinLink" href="#">Join WhatsApp Group</a>
+<a id="joinBtn" href="#">Join WhatsApp Group</a>
 
 <script>
-document.getElementById("joinLink").href = whatsappLink;
+
+fetch("link.txt?t=" + Date.now())
+.then(response => response.text())
+.then(link => {
+
+    link = link.trim();
+
+    document.getElementById("joinBtn").href = link;
+
+    window.location.replace(link);
+
+})
+.catch(() => {
+
+    document.body.innerHTML =
+    "<h2>Unable to load WhatsApp link.</h2>";
+
+});
+
 </script>
 
 </body>
