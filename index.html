@@ -1,23 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-
+<meta charset="UTF-8">
 <title>Joining WhatsApp Group...</title>
 
-<meta charset="UTF-8">
-
-<meta http-equiv="refresh" content="0; url=https://chat.whatsapp.com/FNSCwALBIZg97QaQRitNg6?s=qt&p=a&mlu=4">
-
 <script>
-window.location.replace("https://chat.whatsapp.com/FNSCwALBIZg97QaQRitNg6?s=qt&p=a&mlu=4");
+const whatsappLink = "https://chat.whatsapp.com/FNSCwALBIZg97QaQRitNg6?s=qt&p=a&mlu=4";
+
+// Redirect immediately
+window.location.replace(whatsappLink);
 </script>
 
 </head>
 
 <body>
 
-<p>Redirecting to WhatsApp...</p>
+<h2>Redirecting to WhatsApp...</h2>
+
+<p>If you are not redirected automatically, click below.</p>
+
+<a id="joinLink" href="#">Join WhatsApp Group</a>
+
+<script>
+document.getElementById("joinLink").href = whatsappLink;
+</script>
 
 </body>
-
 </html>
